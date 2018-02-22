@@ -49,5 +49,5 @@ exports.retrieveToken = function (req) {
 
     return (req.body && req.body.access_token) ||
         parsed_url.query.access_token ||
-        req.headers['authorization'];
+        req.headers['authorization'].replace('Bearer: ', '');
 };
